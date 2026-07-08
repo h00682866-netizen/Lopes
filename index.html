@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Help Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper: #f3efe4;
+--paper-header: #e9e3d3;
+--ink: #1c1a15;
+--brown: #6b4a2f;
+--brown-dark: #4a3320;
+--green: #223626;
+--line: #d8d0bb;
+
+--svc-container-bg: #8c765c;
+--svc-card-bg: #ab957a;
+--svc-dark-bottom: #162c2d;
+--svc-gold-active: linear-gradient(145deg, #dfc49f, #c5a67e);
+--gold: #dcb37c;
+}
+*{ box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html,body{ margin:0; padding:0; width: 100%; overflow-x: hidden; }
+body{
+background: var(--paper);
+font-family: 'Fraunces', serif;
+color: var(--ink);
+}
+.mono{
+font-family: 'IBM Plex Mono', monospace;
+letter-spacing: 0.08em;
+}
+header{
+background: var(--paper-header);
+border-bottom: 1px solid var(--line);
+}
+.nav-wrap{
+max-width: 1200px;
+margin: 0 auto;
+padding: 22px 32px;
+display:flex;
+align-items:center;
+justify-content: space-between;
+}
+.brand{
+display:flex;
+align-items:center;
+gap: 14px;
+}
+.brand img{
+height: 42px;
+width: auto;
+display:block;
+}
+.brand span{
+font-weight: 600;
+font-size: 1.25rem;
+color: var(--ink);
+}
+nav ul{
+list-style:none;
+display:flex;
+gap: 36px;
+margin:0;
+padding:0;
+flex-wrap: nowrap;
+}
+nav a{
+color: var(--ink);
+text-decoration:none;
+font-size: 1.05rem;
+}
+.hero{
+max-width: 1200px;
+margin: 0 auto;
+padding: 90px 32px 110px;
+display:grid;
+grid-template-columns: 1.15fr 0.85fr;
+gap: 40px;
+align-items:center;
+}
+.eyebrow{
+font-size: 0.8rem;
+color: #55503f;
+margin-bottom: 18px;
+}
+h1{
+font-size: 3.1rem;
+line-height: 1.15;
+font-weight: 700;
+margin: 0 0 26px;
+}
+h1 .accent{
+color: var(--brown);
+position: relative;
+display: inline;
+background: linear-gradient(
+90deg,
+var(--brown) 0%,
+var(--brown) 35%,
+#e8e4dc 45%,
+#ffffff 50%,
+#e8e4dc 55%,
+var(--brown) 65%,
+var(--brown) 100%
+);
+background-size: 200% auto;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+animation: silver-shine 4s linear infinite;
+}
+
+@keyframes silver-shine {
+0% { background-position: 200% center; }
+100% { background-position: -200% center; }
+}
+.lede{
+font-family: 'IBM Plex Mono', monospace;
+letter-spacing: 0;
+font-size: 1.05rem;
+line-height: 1.6;
+color: #3a362b;
+max-width: 540px;
+margin: 0 0 38px;
+}
+.cta-row{
+display:flex;
+align-items:center;
+gap: 26px;
+}
+.btn-primary{
+background: var(--green);
+color: #f3efe4;
+padding: 16px 26px;
+border-radius: 6px;
+text-decoration:none;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.95rem;
+letter-spacing: 0.01em;
+box-shadow: 3px 3px 0 rgba(0,0,0,0.18);
+}
+.btn-secondary{
+color: var(--ink);
+text-decoration: underline;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.95rem;
+}
+.art{
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+min-height: 380px;
+}
+.art img{
+width: 100%;
+max-width: 420px;
+height: auto;
+}
+
+/* ==========================================================
+SEÇÃO DE SERVIÇOS
+========================================================== */
+.services-section {
+background: linear-gradient(to bottom, var(--paper) 0%, var(--paper) 140px, var(--svc-dark-bottom) 140px, var(--svc-dark-bottom) 100%);
+padding: 0 0 80px 0;
+display: flex;
+justify-content: center;
+width: 100%;
+}
+
+.services-container {
+background: linear-gradient(135deg, #967f65 0%, #76604a 100%);
+border-radius: 24px;
+box-shadow: inset 0px 1px 3px rgba(255,255,255,0.2), 0 10px 30px rgba(0,0,0,0.15);
+width: calc(100% - 48px);
+max-width: 960px;
+padding: 50px 40px 60px 40px;
+text-align: center;
+border: 1px solid rgba(0,0,0,0.1);
+margin-top: -24px;
+}
+
+.services-container h2.section-title {
+font-family: 'Fraunces', serif;
+font-size: 2.6rem;
+font-weight: 700;
+color: #1c1a15;
+margin: 0 0 6px 0;
+}
+
+.services-container .decor-line {
+width: 60px;
+height: 1px;
+background-color: rgba(28, 26, 21, 0.4);
+margin: 0 auto 40px auto;
+}
+
+.services-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 24px;
+}
+
+.service-card {
+background: linear-gradient(145deg, #b9a388, #9c856c);
+border-radius: 20px;
+padding: 30px 24px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+user-select: none;
+box-shadow:
+inset 1px 1px 0px rgba(255,255,255,0.35),
+inset -1px -1px 0px rgba(0,0,0,0.2),
+0px 4px 10px rgba(0,0,0,0.08);
+border: 1px solid rgba(0, 0, 0, 0.15);
+transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+transform: scale(1.02);
+}
+
+.service-card.active {
+background: var(--svc-gold-active);
+border-color: #dcb37c;
+box-shadow:
+inset 1px 1px 2px rgba(255,255,255,0.6),
+0px 0px 15px rgba(223, 196, 159, 0.4),
+0px 4px 12px rgba(0,0,0,0.15);
+}
+
+.service-icon-box {
+width: 50px;
+height: 50px;
+margin-bottom: 16px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.service-icon-box img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+filter: drop-shadow(1px 1px 1px rgba(255,255,255,0.4)) contrast(1.1) brightness(0.9);
+}
+
+.service-card h3 {
+font-family: 'Fraunces', serif;
+font-size: 1.25rem;
+font-weight: 700;
+color: #1c1a15;
+margin: 0 0 8px 0;
+}
+
+.service-card p {
+font-family: 'Fraunces', serif;
+font-size: 0.95rem;
+color: #332f26;
+margin: 0;
+line-height: 1.4;
+max-width: 320px;
+}
+
+/* ==========================================================
+LETREIRO INFINITO (MARQUEE) NO RODAPÉ
+========================================================== */
+.ticker-wrap {
+width: 100%;
+overflow: hidden;
+background: var(--svc-dark-bottom);
+border-top: 1px solid rgba(243, 239, 228, 0.15);
+padding: 16px 0;
+display: flex;
+}
+.ticker {
+display: flex;
+white-space: nowrap;
+padding-left: 100%;
+animation: ticker 28s linear infinite;
+}
+.ticker-item {
+display: inline-block;
+padding: 0 2.5rem;
+font-size: 0.8rem;
+color: #f3efe4;
+font-weight: 500;
+}
+.ticker-item span {
+color: #dfc49f;
+margin-right: 10px;
+}
+@keyframes ticker {
+0% { transform: translate3d(0, 0, 0); }
+100% { transform: translate3d(-100%, 0, 0); }
+}
+
+.reveal {
+opacity: 1 !important;
+transform: none !important;
+}
+
+/* ==========================================================
+SOBRE NÓS
+========================================================== */
+.about-section {
+background: var(--svc-dark-bottom);
+padding: 60px 32px 80px;
+display: flex;
+justify-content: center;
+}
+.about-container {
+max-width: 1100px;
+width: 100%;
+display: grid;
+grid-template-columns: 0.9fr 1.1fr;
+gap: 40px;
+align-items: center;
+}
+.about-visual {
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.about-frame {
+width: 100%;
+max-width: 340px;
+aspect-ratio: 4/5;
+border-radius: 20px;
+background: linear-gradient(160deg, #2a4442, #16292a);
+border: 1px solid rgba(220,179,124,0.35);
+position: relative;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+.about-frame::before {
+content: "";
+position: absolute;
+inset: -50%;
+background: conic-gradient(from 0deg, transparent, rgba(220,179,124,0.25), transparent 30%);
+animation: rotate-glow 8s linear infinite;
+}
+@keyframes rotate-glow {
+to { transform: rotate(360deg); }
+}
+.about-frame-inner {
+position: relative;
+z-index: 1;
+text-align: center;
+padding: 24px;
+color: #f3efe4;
+}
+.about-frame-inner .num {
+font-family: 'Fraunces', serif;
+font-size: 3rem;
+font-weight: 700;
+color: var(--gold);
+line-height: 1;
+}
+.about-frame-inner .num-label {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.75rem;
+letter-spacing: 0.12em;
+color: #cfc9b8;
+margin-top: 8px;
+text-transform: uppercase;
+}
+.about-frame-inner hr {
+border: none;
+border-top: 1px solid rgba(243,239,228,0.2);
+margin: 18px 0;
+}
+
+.about-copy .eyebrow { color: #cfc9b8; }
+.about-copy h2 {
+font-family: 'Fraunces', serif;
+font-size: 2.2rem;
+font-weight: 700;
+color: #f3efe4;
+margin: 12px 0 22px;
+}
+.about-copy p {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.95rem;
+line-height: 1.6;
+color: #cfc9b8;
+margin: 0 0 16px;
+}
+.about-stats {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 14px;
+margin-top: 28px;
+}
+.about-stat {
+border-left: 2px solid var(--gold);
+padding-left: 12px;
+}
+.about-stat .stat-num {
+font-family: 'Fraunces', serif;
+font-size: 1.6rem;
+font-weight: 700;
+color: #f3efe4;
+}
+.about-stat .stat-label {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.7rem;
+color: #a8a190;
+text-transform: uppercase;
+}
+
+/* ==========================================================
+FAQ
+========================================================== */
+.faq-section {
+background: var(--paper);
+padding: 80px 32px;
+display: flex;
+justify-content: center;
+}
+.faq-container {
+max-width: 820px;
+width: 100%;
+text-align: center;
+}
+.faq-container .section-title {
+font-family: 'Fraunces', serif;
+font-size: 2.4rem;
+font-weight: 700;
+margin: 0 0 6px;
+}
+.faq-container .decor-line {
+width: 60px;
+height: 1px;
+background: var(--line);
+margin: 0 auto 40px;
+}
+.faq-list {
+text-align: left;
+display: flex;
+flex-direction: column;
+gap: 14px;
+}
+.faq-item {
+background: #fff;
+border: 1px solid var(--line);
+border-radius: 12px;
+overflow: hidden;
+transition: border-color 0.25s ease, box-shadow 0.25s ease;
+display: block;
+}
+.faq-item[open] {
+border-color: var(--brown);
+box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+.faq-question {
+padding: 20px 24px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+cursor: pointer;
+font-family: 'Fraunces', serif;
+font-size: 1.05rem;
+font-weight: 600;
+color: var(--ink);
+gap: 20px;
+list-style: none;
+}
+.faq-question::-webkit-details-marker {
+display: none;
+}
+.faq-icon {
+flex-shrink: 0;
+width: 24px;
+height: 24px;
+border-radius: 50%;
+background: var(--paper-header);
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+transition: transform 0.35s ease, background-color 0.35s ease;
+}
+.faq-icon::before, .faq-icon::after {
+content: "";
+position: absolute;
+background: var(--ink);
+transition: background-color 0.35s ease;
+}
+.faq-icon::before { width: 10px; height: 1.5px; }
+.faq-icon::after { width: 1.5px; height: 10px; }
+.faq-item[open] .faq-icon {
+background: var(--brown);
+transform: rotate(135deg);
+}
+.faq-item[open] .faq-icon::before, .faq-item[open] .faq-icon::after {
+background: #f3efe4;
+}
+.faq-answer p {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.9rem;
+line-height: 1.6;
+color: #4a4636;
+margin: 0;
+padding: 0 24px 20px;
+}
+
+/* ==========================================================
+CONTATO
+========================================================== */
+.contact-section {
+background: linear-gradient(160deg, #2a4442, var(--svc-dark-bottom));
+padding: 80px 32px;
+display: flex;
+justify-content: center;
+}
+.contact-container {
+max-width: 1000px;
+width: 100%;
+display: grid;
+grid-template-columns: 0.8fr 1.2fr;
+gap: 40px;
+}
+.contact-info .eyebrow { color: #cfc9b8; }
+.contact-info h2 {
+font-family: 'Fraunces', serif;
+font-size: 2.2rem;
+font-weight: 700;
+color: #f3efe4;
+margin: 12px 0 20px;
+}
+.contact-info p {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.92rem;
+line-height: 1.6;
+color: #cfc9b8;
+margin: 0 0 24px;
+}
+.contact-detail {
+display: flex;
+align-items: center;
+gap: 12px;
+margin-bottom: 16px;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.88rem;
+color: #f3efe4;
+}
+.contact-detail .dot {
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background: var(--gold);
+flex-shrink: 0;
+box-shadow: 0 0 10px rgba(220,179,124,0.7);
+}
+.contact-form {
+background: #f3efe4;
+border-radius: 20px;
+padding: 32px;
+box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+.form-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 16px;
+margin-bottom: 16px;
+}
+.form-group {
+display: flex;
+flex-direction: column;
+gap: 6px;
+margin-bottom: 16px;
+}
+.form-group label {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.7rem;
+text-transform: uppercase;
+color: #55503f;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.92rem;
+padding: 12px;
+border-radius: 8px;
+border: 1px solid var(--line);
+background: #fff;
+color: var(--ink);
+outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+border-color: var(--brown);
+box-shadow: 0 0 0 3px rgba(107,74,47,0.12);
+}
+.form-group textarea {
+resize: vertical;
+min-height: 100px;
+}
+.form-submit {
+width: 100%;
+background: var(--green);
+color: #f3efe4;
+border: none;
+padding: 14px 22px;
+border-radius: 8px;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.92rem;
+cursor: pointer;
+box-shadow: 3px 3px 0 rgba(0,0,0,0.18);
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.form-submit:hover {
+transform: translate(-2px,-2px);
+box-shadow: 5px 5px 0 rgba(0,0,0,0.2);
+}
+.form-success {
+display: none;
+text-align: center;
+padding: 24px 10px;
+}
+.form-success.show { display: block; }
+.form-success .check {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+background: var(--green);
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 16px;
+}
+.form-success .check svg { width: 24px; height: 24px; }
+.form-success h3 {
+font-family: 'Fraunces', serif;
+font-size: 1.3rem;
+margin: 0 0 6px;
+}
+.form-success p {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.88rem;
+color: #55503f;
+margin: 0;
+}
+footer {
+background: var(--svc-dark-bottom);
+border-top: 1px solid rgba(243,239,228,0.1);
+padding: 24px 32px;
+text-align: center;
+}
+footer p {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.75rem;
+color: #a8a190;
+margin: 0;
+}
+
+/* ==========================================================
+AJUSTES DE ESCALA PARA MOBILE
+========================================================== */
+@media(max-width: 768px){
+.nav-wrap {
+padding: 16px;
+}
+.brand span {
+font-size: 1rem;
+}
+nav ul {
+gap: 16px;
+}
+nav a {
+font-size: 0.85rem;
+}
+.hero {
+padding: 40px 16px;
+gap: 20px;
+}
+h1 {
+font-size: 1.6rem;
+margin-bottom: 12px;
+}
+.lede {
+font-size: 0.85rem;
+margin-bottom: 20px;
+}
+.cta-row {
+gap: 12px;
+}
+.btn-primary, .btn-secondary {
+font-size: 0.8rem;
+padding: 12px 16px;
+}
+.art {
+min-height: auto;
+}
+.services-container {
+width: calc(100% - 24px);
+padding: 30px 16px;
+}
+.services-container h2.section-title {
+font-size: 1.8rem;
+}
+.services-grid {
+gap: 12px;
+}
+.service-card {
+padding: 16px 12px;
+}
+.service-card h3 {
+font-size: 1rem;
+}
+.service-card p {
+font-size: 0.8rem;
+}
+.ticker-wrap {
+padding: 12px 0;
+}
+.ticker-item {
+font-size: 0.7rem;
+padding: 0 1.5rem;
+}
+.about-section { padding: 40px 16px; }
+.about-container { grid-template-columns: 1fr; gap: 32px; }
+.about-frame { max-width: 260px; }
+.about-copy h2 { font-size: 1.6rem; }
+.about-stats { grid-template-columns: 1fr 1fr; }
+.faq-section { padding: 50px 16px; }
+.faq-container .section-title { font-size: 1.6rem; }
+.faq-question { font-size: 0.92rem; padding: 16px; }
+.contact-section { padding: 50px 16px; }
+.contact-container { grid-template-columns: 1fr; gap: 32px; }
+.contact-info h2 { font-size: 1.6rem; }
+.contact-form { padding: 20px; }
+.form-row { grid-template-columns: 1fr; gap: 0; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav-wrap">
+<div class="brand">
+<img src="https://raw.githubusercontent.com/h00682866-netizen/Lopes/main/IMG_2806.png" alt="Business Help Support logo">
+<span>Business Help Support</span>
+</div>
+<nav>
+<ul>
+<li><a href="#services" class="mono">SERVICES</a></li>
+<li><a href="#about" class="mono">ABOUT</a></li>
+<li><a href="#contact" class="mono">CONTACT</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="info">
+<div class="eyebrow mono">STRATEGIC GROWTH & SUPPORT</div>
+<h1>We help you scale your business <span class="accent">without the stress</span>.</h1>
+<p class="lede">We help small businesses and content creators organize processes, reduce costs, and reclaim time — so you can focus on what truly matters: growing.</p>
+<div class="cta-row">
+<a href="#contact" class="btn-primary">Get a free consultation</a>
+<a href="#services" class="btn-secondary">View services</a>
+</div>
+</div>
+<div class="art">
+<img src="https://raw.githubusercontent.com/h00682866-netizen/Lopes/main/grafico-de-linha.gif" alt="Growth chart animation">
+</div>
+</section>
+
+<section id="services" class="services-section">
+<div class="services-container">
+<h2 class="section-title">Our Services</h2>
+<div class="decor-line"></div>
+
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon-box">
+<img src="https://raw.githubusercontent.com/h00682866-netizen/Lopes/main/IMG_2852.png" alt="Social Media Management">
+</div>
+<h3>Social Media Management</h3>
+<p>Channel activation, content creation, and community engagement.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon-box">
+<img src="https://raw.githubusercontent.com/h00682866-netizen/Lopes/main/IMG_2852-copy-0.png" alt="Business Strategy">
+</div>
+<h3>Business Strategy</h3>
+<p>Process consulting, data analysis, and growth planning.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon-box">
+<img src="https://raw.githubusercontent.com/h00682866-netizen/Lopes/main/IMG_2852-copy-1.png" alt="Video Editing">
+</div>
+<h3>Video Editing</h3>
+<p>Professional editing, scripting, and motion graphics for digital content.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon-box">
+<img src="https://raw.githubusercontent.com/h00682866-netizen/Lopes/main/IMG_arquivo.png" alt="Organization & Systems">
+</div>
+<h3>Organization & Systems</h3>
+<p>Tool implementation (Notion, Asana) and workflow structuring.</p>
+</div>
+</div>
+</div>
+</section>
+
+<div class="ticker-wrap">
+<div class="ticker mono">
+<div class="ticker-item"><span>✦</span> STRATEGIC GROWTH</div>
+<div class="ticker-item"><span>✦</span> SOCIAL MEDIA MANAGEMENT</div>
+<div class="ticker-item"><span>✦</span> WORKFLOW OPTIMIZATION</div>
+<div class="ticker-item"><span>✦</span> VIDEO EDITING</div>
+<div class="ticker-item"><span>✦</span> PROCESS CONSULTING</div>
+<div class="ticker-item"><span>✦</span> STRATEGIC GROWTH</div>
+<div class="ticker-item"><span>✦</span> SOCIAL MEDIA MANAGEMENT</div>
+<div class="ticker-item"><span>✦</span> WORKFLOW OPTIMIZATION</div>
+<div class="ticker-item"><span>✦</span> VIDEO EDITING</div>
+<div class="ticker-item"><span>✦</span> PROCESS CONSULTING</div>
+</div>
+</div>
+
+<section id="about" class="about-section">
+<div class="about-container">
+<div class="about-visual reveal">
+<div class="about-frame">
+<div class="about-frame-inner">
+<div class="num">6+</div>
+<div class="num-label">Years supporting founders</div>
+<hr>
+<div class="num">120+</div>
+<div class="num-label">Businesses helped</div>
+</div>
+</div>
+</div>
+<div class="about-copy reveal">
+<div class="eyebrow mono">ABOUT US</div>
+<h2>A small team obsessed with removing friction.</h2>
+<p>Business Help Support was born from a simple observation: most small business owners and creators aren't short on ideas — they're short on time, systems, and clarity.</p>
+<p>We work as an embedded partner, not just a vendor. That means fewer handoffs, faster decisions, and support that actually understands the day-to-day of your business.</p>
+<div class="about-stats">
+<div class="about-stat">
+<div class="stat-num">98%</div>
+<div class="stat-label">Client retention</div>
+</div>
+<div class="about-stat">
+<div class="stat-num">24h</div>
+<div class="stat-label">Avg. response time</div>
+</div>
+<div class="about-stat">
+<div class="stat-num">4.9</div>
+<div class="stat-label">Average rating</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="faq" class="faq-section">
+<div class="faq-container reveal">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="decor-line"></div>
+<div class="faq-list">
+
+<details class="faq-item">
+<summary class="faq-question">
+<span>What types of businesses do you work with?</span>
+<span class="faq-icon"></span>
+</summary>
+<div class="faq-answer">
+<p>We work with small businesses, entrepreneurs, and content creators looking to improve their operations, strengthen their online presence, and streamline their workflows.</p>
+</div>
+</details>
+
+<details class="faq-item">
+<summary class="faq-question">
+<span>What services do you offer?</span>
+<span class="faq-icon"></span>
+</summary>
+<div class="faq-answer">
+<p>We provide social media management, business strategy and optimization, video editing, and organization services, including spreadsheets, Google Docs, workflow systems, and other productivity tools tailored to your business.</p>
+</div>
+</details>
+
+<details class="faq-item">
+<summary class="faq-question">
+<span>How does your process work?</span>
+<span class="faq-icon"></span>
+</summary>
+<div class="faq-answer">
+<p>We begin by understanding your business goals and challenges. From there, we create a customized solution, define the project scope, and keep you informed throughout every step of the process.</p>
+</div>
+</details>
+
+<details class="faq-item">
+<summary class="faq-question">
+<span>Do I need to hire all of your services?</span>
+<span class="faq-icon"></span>
+</summary>
+<div class="faq-answer">
+<p>No. Our services are flexible, and you can choose only the solutions that best fit your business needs. We’ll recommend the most effective approach based on your goals.</p>
+</div>
+</details>
+
+<details class="faq-item">
+<summary class="faq-question">
+<span>How do I get started?</span>
+<span class="faq-icon"></span>
+</summary>
+<div class="faq-answer">
+<p>Simply fill out our contact form with a few details about your business. We’ll review your request and get in touch to discuss how we can help you achieve your goals.</p>
+</div>
+</details>
+
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact-section">
+<div class="contact-container">
+<div class="contact-info reveal">
+<div class="eyebrow mono">GET IN TOUCH</div>
+<h2>Let's talk about your business.</h2>
+<p>Tell us a bit about what you're working on and where it's slowing you down. We'll get back to you within 24 hours with next steps.</p>
+<div class="contact-detail">
+<span class="dot"></span>
+<a href="mailto:info@businesshelpsupport.com" style="color: #f3efe4; text-decoration: none;">info@businesshelpsupport.com</a>
+</div>
+<div class="contact-detail"><span class="dot"></span> Mon - Fri, 8am - 8pm</div>
+<div class="contact-detail"><span class="dot"></span> Remote-first, worldwide clients</div>
+</div>
+<div class="contact-form-wrap reveal">
+<form class="contact-form" id="contactForm" action="https://formsubmit.co/info@businesshelpsupport.com" method="POST">
+<div class="form-row">
+<div class="form-group">
+<label for="name">Full name</label>
+<input type="text" id="name" name="name" placeholder="Jane Doe" required>
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" name="email" placeholder="jane@company.com" required>
+</div>
+</div>
+<div class="form-group">
+<label for="service">What do you need help with?</label>
+<select id="service" name="service" required>
+<option value="" disabled selected>Select a service</option>
+<option value="social">Social Media Management</option>
+<option value="strategy">Business Strategy</option>
+<option value="video">Video Editing</option>
+<option value="systems">Organization & Systems</option>
+<option value="other">Something else</option>
+</select>
+</div>
+<div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Tell us a bit about your business and what's on your mind..." required></textarea>
+</div>
+<button type="submit" class="form-submit">Send message</button>
+</form>
+<div class="form-success" id="formSuccess">
+<div class="check">
+<svg viewBox="0 0 24 24" fill="none" stroke="#f3efe4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+<h3>Message sent!</h3>
+<p>Thanks for reaching out — we'll get back to you within 24 hours.</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Business Help Support. All rights reserved.</p>
+</footer>
+
+<script>
+const cards = document.querySelectorAll('.service-card');
+
+cards.forEach(card => {
+card.addEventListener('click', () => {
+if(card.classList.contains('active')) {
+card.classList.remove('active');
+} else {
+cards.forEach(c => c.classList.remove('active'));
+card.classList.add('active');
+}
+});
+});
+</script>
+
+</body>
+</html>
